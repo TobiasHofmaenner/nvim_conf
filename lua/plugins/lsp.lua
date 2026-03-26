@@ -29,6 +29,18 @@ return {
           },
         },
       })
+      local arduino_cli_config = os.getenv("ARDUINO_CLI_CONFIG")
+          or "/home/ferrocoater/snap/arduino-cli/62/.arduino15/arduino-cli.yaml"
+
+      vim.lsp.config("arduino_language_server", {
+        cmd = {
+          "arduino-language-server",
+          "-clangd", "clangd",
+          "-cli", "arduino-cli",
+          "-cli-config", arduino_cli_config,
+        },
+      })
+      vim.lsp.enable("arduino_language_server")
 
       vim.lsp.config("bashls", {
         capabilities = capabilities,

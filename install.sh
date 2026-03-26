@@ -16,7 +16,9 @@ trap cleanup EXIT
 
 echo "==> Installing dependencies"
 sudo apt update
-sudo apt install -y curl tar npm nodejs
+sudo apt install -y curl tar npm nodejs golang-go
+
+sudo go install github.com/arduino/arduino-language-server@latest
 
 echo "==> Downloading latest Neovim release"
 cd "$TMP_DIR"
