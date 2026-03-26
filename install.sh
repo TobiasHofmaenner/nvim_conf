@@ -38,3 +38,4 @@ echo "Installed Neovim from:"
 echo "  $URL"
 echo "Binary:"
 echo "  $SYMLINK"
+
