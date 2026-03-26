@@ -1,12 +1,10 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.opt.mouse = ""
-
 local opt = vim.opt
 
 opt.number = true
 opt.relativenumber = true
-opt.mouse = "a"
+opt.mouse = ""
 opt.showmode = false
 opt.clipboard = "unnamedplus"
 opt.breakindent = true

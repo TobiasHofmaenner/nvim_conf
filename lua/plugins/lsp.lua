@@ -46,6 +46,9 @@ return {
         capabilities = capabilities,
       })
 
+      vim.lsp.config("texlab", {
+        capabilities = capabilities,
+      })
       vim.lsp.config("yamlls", {
         capabilities = capabilities,
       })
@@ -101,6 +104,7 @@ return {
           "gopls",
           "zls",
           "intelephense",
+          "texlab",
         },
         automatic_enable = true,
       })
