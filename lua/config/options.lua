@@ -28,3 +28,14 @@ opt.expandtab = true
 opt.smartindent = true
 
 opt.termguicolors = true
+vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
+  callback = function()
+    vim.wo.winhighlight = "Normal:Normal,NormalNC:NormalNC"
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
+  callback = function()
+    vim.wo.winhighlight = "Normal:NormalNC,NormalNC:NormalNC"
+  end,
+})
