@@ -51,6 +51,26 @@ return {
       })
       vim.lsp.config("yamlls", {
         capabilities = capabilities,
+        settings = {
+          yaml = {
+            schemaStore = {
+              enable = true,
+              url = "https://www.schemastore.org/api/json/catalog.json",
+            },
+            schemas = {
+              ["https://kubernetes-schemas.pages.dev/apps/deployment_v1.json"] = "*/apps/*/deployment*.yaml",
+              ["https://kubernetes-schemas.pages.dev/apps/statefulset_v1.json"] = "*/apps/*/statefulset*.yaml",
+              ["https://kubernetes-schemas.pages.dev/apps/daemonset_v1.json"] = "*/apps/*/daemonset*.yaml",
+              ["https://kubernetes-schemas.pages.dev/core/service_v1.json"] = "*/apps/*/service*.yaml",
+              ["https://kubernetes-schemas.pages.dev/helm.toolkit.fluxcd.io/helmrelease_v2.json"] = "*/helm-release.yaml",
+              ["https://kubernetes-schemas.pages.dev/source.toolkit.fluxcd.io/gitrepository_v1.json"] = "*/git-repository.yaml",
+              ["https://kubernetes-schemas.pages.dev/kustomize.toolkit.fluxcd.io/kustomization_v1.json"] = "*/ks.yaml",
+            },
+            validate = true,
+            completion = true,
+            hover = true,
+          },
+        },
       })
 
       vim.lsp.config("jsonls", {
