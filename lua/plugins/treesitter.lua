@@ -5,14 +5,8 @@ return {
     build = ":TSUpdate",
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
-      { "nvim-treesitter/nvim-treesitter-context", commit = "v5.3.0" },
     },
     config = function()
-      require("treesitter-context").setup({
-        enable = true,
-        max_lines = 3,
-      })
-
       require("nvim-treesitter.configs").setup({
         ensure_installed = {
           "bash",
