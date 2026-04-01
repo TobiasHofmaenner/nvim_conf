@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo "==> Copy configs"
 rm -rf "$HOME/.config/nvim"
 mkdir -p "$HOME/.config/nvim"
